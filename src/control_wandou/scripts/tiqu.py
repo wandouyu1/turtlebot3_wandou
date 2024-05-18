@@ -14,10 +14,10 @@ class Follower:
     self.image_sub = rospy.Subscriber('camera/rgb/image_raw', Image, self.image_callback)
     self.cmd_vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=5)
 
-    self.del_time = 0.0
-    self.integral = 0.0
-    self.per_error = 0.0
-    self.per_time = rospy.Time().now().to_sec()
+    # self.del_time = 0.0
+    # self.integral = 0.0
+    # self.per_error = 0.0
+    # self.per_time = rospy.Time().now().to_sec()
     # rospy.sleep(1)
     rospy.on_shutdown(self.cleanup)
 
@@ -53,17 +53,17 @@ class Follower:
     cv2.waitKey(2)
 
     error_x = cx - width / 2
-    now_time = rospy.Time().now().to_sec()
-    self.del_time = now_time - self.per_time
+    # now_time = rospy.Time().now().to_sec()
+    # self.del_time = now_time - self.per_time
 
-    angle_error = (0.8 * error_x + 0.1 * (error_x - self.per_error)/self.del_time)/360
+    # angle_error = (0.8 * error_x + 0.1 * (error_x - self.per_error)/self.del_time)/360
     
-    self.per_error = error_x
-    self.per_time = now_time
+    # self.per_error = error_x
+    # self.per_time = now_time
 
     twist_object = Twist()
-    twist_object.linear.x = 1
-    twist_object.angular.z = -angle_error
+    twist_object.linear.x = 0.8
+    twist_object.angular.z = -error_x/360
     
     rospy.loginfo("ANGULAR VALUE SENT ===>"+str(twist_object.angular.z))
     self.cmd_vel_pub.publish(twist_object)
