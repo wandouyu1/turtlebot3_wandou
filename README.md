@@ -18,12 +18,12 @@ ros noetic
 3. 编译
 
 ```
-    
-```
 cd turtlebot3_wandou
 catkin_make
-source devel/setup.bash
+source devel/setup.bash   
 ```
+
+
 
 4. 运行
 
@@ -34,7 +34,5 @@ rosrun control_wandou tiqu.py
 
 5. 运行结果
 
-```
-    
-```
+![本地路径](结果.png "结果")
     
