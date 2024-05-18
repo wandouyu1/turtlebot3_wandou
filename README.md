@@ -31,6 +31,7 @@ source devel/setup.bash
 4. 运行
 
 ```
+export TURTLEBOT3_MODEL=burger
 roslaunch turtlebot3_gazebo my.launch
 rosrun control_wandou tiqu.py
 ```
