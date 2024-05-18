@@ -1,5 +1,9 @@
 # turtlebot3_wandou
- 
+
+基于turtlebot3添加kinect摄像头实现比例控制寻线
+
+gazebo模拟环境，ros控制
+
 使用方法
 
 1. 下载代码
@@ -12,7 +16,6 @@ git clone https://github.com/wandouyu1/turtlebot3_wandou.git
 
 ```
 ros noetic
-
 ```
 
 3. 编译
