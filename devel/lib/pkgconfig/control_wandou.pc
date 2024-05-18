@@ -1,0 +1,8 @@
+prefix=/home/wandou/Desktop/project/turtlebot3_wandou/devel
+
+Name: control_wandou
+Description: Description of control_wandou
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
